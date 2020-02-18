@@ -30,6 +30,7 @@ a {
 /* -- LAYOUT */
 
 body {
+	font-family: sans-serif;
 	background-color: var(--color-background);
 	display: flex;
 	flex-flow: column nowrap;
