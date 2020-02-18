@@ -1,9 +1,15 @@
 /* -- VARIABLES */
 
 :root {
-	--color-background: #008080;
-	--color-ui-background: #c0c0c0;
-	--color-ui-background-hover: #0000ff;
+	--color-background: rgba(85,170,170,1);
+	--color-foreground: rgba(0,0,0,1);
+	--color-ui-background: rgba(195,199,203,1);
+	--color-ui-border-shadow-1: rgba(0,0,0,1);
+	--color-ui-border-shadow-2: rgba(134,138,142,1);
+	--color-ui-border-light-1: rgba(255,255,255,1);
+	--color-ui-border-light-2: rgba(195,199,203,1);
+	--color-ui-item-hover: rgba(0,0,170,1);
+	--color-ui-item-hover-foreground: rgba(255,255,255,1);
 }
 
 /* -- RESET */
@@ -15,6 +21,10 @@
 html, body {
 	height: 100%;
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
 }
 
 /* -- LAYOUT */
@@ -30,12 +40,18 @@ body {
 
 h1 {
 	font-family: monospace;
+	user-select: none;
+	margin: 0 0 16px 0;
 }
 
 .container-menus {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: flex-start;
+}
+
+.container-menus > * {
+	margin: 0 8px;
 }
 
 .w95 {
@@ -52,10 +68,11 @@ h1 {
 	height: 100%;
 	display: block;
 	content: '';
-	box-shadow: -1px -1px #000 inset,
-		1px 1px var(--color-ui-background) inset,
-		-2px -2px #888 inset,
-		2px 2px #fff inset;
+	box-shadow:
+		inset -1px -1px var(--color-ui-border-shadow-1),
+		inset 1px 1px var(--color-ui-border-light-2),
+		inset -2px -2px var(--color-ui-border-shadow-2),
+		inset 2px 2px var(--color-ui-border-light-1);
 	pointer-events: none;
 }
 
@@ -64,25 +81,27 @@ h1 {
 }
 
 .w95.w95-alt::before {
-	box-shadow: -1px -1px #000 inset,
-		1px 1px #fff inset,
-		-2px -2px #888 inset;
+	box-shadow:
+		inset -1px -1px var(--color-ui-border-shadow-1),
+		inset 1px 1px var(--color-ui-border-light-1),
+		inset -2px -2px var(--color-ui-border-shadow-2);
 }
 
-ul {
-	list-style: none;
-	margin: 8px;
-	padding: 0;
-}
-
-ul > li:first-child {
+.w95.w95-alt.w95-button {
+	color: var(--color-foreground);
 	padding: 4px;
+	user-select: none;
 }
 
-ul > li:hover {
-	background-color: var(--color-ui-background-hover);
+.w95.w95-alt.w95-button:active::before {
+	box-shadow:
+		inset -1px -1px var(--color-ui-border-light-1),
+		inset 1px 1px var(--color-ui-border-shadow-1),
+		inset 2px 2px var(--color-ui-border-shadow-2);
 }
 
-hr {
-	margin: 0;
+.w95.w95-alt.w95-button.disabled {
+	pointer-events: none;
+	color: var(--color-ui-border-shadow-2);
+	text-shadow: 1px 1px var(--color-ui-border-light-1);
 }
