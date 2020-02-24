@@ -1,15 +1,15 @@
 /* -- VARIABLES */
 
 :root {
-	--color-background: rgba(85,170,170,1);
-	--color-foreground: rgba(0,0,0,1);
-	--color-ui-background: rgba(195,199,203,1);
-	--color-ui-border-shadow-1: rgba(0,0,0,1);
-	--color-ui-border-shadow-2: rgba(134,138,142,1);
-	--color-ui-border-light-1: rgba(255,255,255,1);
-	--color-ui-border-light-2: rgba(195,199,203,1);
-	--color-ui-item-hover: rgba(0,0,170,1);
-	--color-ui-item-hover-foreground: rgba(255,255,255,1);
+	--color-background: #55aaaa;
+	--color-foreground: #000000;
+	--color-ui-background: #c3c7cb;
+	--color-ui-border-shadow-1: #000000;
+	--color-ui-border-shadow-2: #868a8e;
+	--color-ui-border-light-1: #ffffff;
+	--color-ui-border-light-2: #c3c7cb;
+	--color-ui-item-hover: #0000aa;
+	--color-ui-item-hover-foreground: #ffffff;
 }
 
 /* -- RESET */
